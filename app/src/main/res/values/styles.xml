@@ -15,4 +15,7 @@
         <item name="android:textStyle">bold</item>
         <item name="android:textAppearance">?android:textAppearanceMedium</item>
     </style>
+    <style name="MyTabs">
+        <item name="tabIndicatorColor">#0000FF</item>
+    </style>
 </resources>

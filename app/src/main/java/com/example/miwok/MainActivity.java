@@ -1,11 +1,15 @@
     package com.example.miwok;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager2.widget.ViewPager2;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+
+import com.google.android.material.tabs.TabLayout;
+import com.google.android.material.tabs.TabLayoutMediator;
 
 import org.w3c.dom.Text;
 
@@ -16,51 +20,33 @@ import org.w3c.dom.Text;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        TextView number=(TextView) findViewById(R.id.numbers);
+        ViewPager2 viewPager=(ViewPager2) findViewById(R.id.viewPager);
 
-        number.setOnClickListener(new View.OnClickListener() {
+        CategoryAdapter adapter=new CategoryAdapter(this);
+        viewPager.setAdapter(adapter);
+
+        TabLayout tabLayout=(TabLayout) findViewById(R.id.tabs);
+        new TabLayoutMediator(tabLayout, viewPager, new TabLayoutMediator.TabConfigurationStrategy() {
             @Override
-            public void onClick(View v) {
-                Intent numberIntent=new Intent(MainActivity.this,NumbersActivity.class);
-                startActivity(numberIntent);
+            public void onConfigureTab(TabLayout.Tab tab, int position) {
+                switch (position) {
+                    case 0:
+                        tab.setText("NUMBER");
+                        break;
+                    case 1:
+                        tab.setText("FAMILY");
+                        break;
+                    case 2:
+                        tab.setText("COLORS");
+                        break;
+
+                    default:
+                        tab.setText("PHRASES");
+                        break;
+                }
             }
-        });
+        }).attach();
 
-
-        TextView family=(TextView) findViewById(R.id.family);
-
-        family.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent familyIntent=new Intent(MainActivity.this,FamilyActivity.class);
-                startActivity(familyIntent);
-
-            }
-        });
-
-
-        TextView colors=(TextView) findViewById(R.id.colors);
-
-        colors.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent colorIntent=new Intent(MainActivity.this,FamilyActivity.class);
-                startActivity(colorIntent);
-
-            }
-        });
-
-
-        TextView phrases=(TextView) findViewById(R.id.phrases);
-
-        phrases.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent phrasesIntent=new Intent(MainActivity.this,FamilyActivity.class);
-                startActivity(phrasesIntent);
-
-            }
-        });
 
 
 
