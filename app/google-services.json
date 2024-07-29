@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "365755997484",
+    "project_id": "miwok-33df2",
+    "storage_bucket": "miwok-33df2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:365755997484:android:e15e7406c575d862e6a089",
+        "android_client_info": {
+          "package_name": "com.example.miwok"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQE7NliTWSazLla5zcHcjGud0TCVLU5OM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
